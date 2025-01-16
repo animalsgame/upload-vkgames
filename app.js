@@ -89,13 +89,11 @@ file.on('data',data=>{client.write(data, cb)}).on('end',()=>{resolve(true)});
 }
 
 return new Promise(resolve=>{
-//var tlsProps = {rejectUnauthorized:false};
-var tlsProps = {};
 var bufHeader = Buffer.alloc(0);
 var chunks = [];
 var isErrors = false;
 var result = {};
-var client = tls.connect(443, host, tlsProps, async()=>{
+var client = tls.connect(443, host, {rejectUnauthorized:false}, async()=>{
 if(packets){
 for (var i = 0; i < packets.length; i++) {
 var packet = packets[i];

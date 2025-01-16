@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html{
+margin:15px;
+font-family:Arial;
+font-size:18px;
+background:#FFFFFF;
+}
+</style>
+<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+</head>
+<body>
+<script>
+console.log('Hello World!');
+if(window.vkBridge){
+vkBridge.send('VKWebAppInit');
+}
+</script>
+<div style="text-align:center;">Hello World!</div>
+</body>
+</html>
